@@ -1,0 +1,71 @@
+@import "./partials/_mixin";
+@import "./partials/_common";
+@import "./partials/_variables";
+
+.header {
+  min-width: 100%;
+  background-image: url('../assets/images/hero.png');
+  background-position: center;
+  position: relative;
+  height: 100vh;
+
+  &__overlay {
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__content {
+    @include content;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+
+    .header__hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+
+      &-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 7px;
+        margin-bottom: 20px;
+
+        .header__hero-title {
+          font-family: 'Cooper Hewitt Bold Italic', Arial, sans-serif;
+          font-size: 2.5rem;
+          text-transform: uppercase;
+          color: $white;
+          text-align: center;
+          line-height: 2.5rem;
+        }
+
+        .header__hero-caption {
+          font-family: 'Cooper Hewitt Book', Arial, sans-serif;
+          font-size: 0.875rem;
+          color: $white;
+          text-align: center;
+          line-height: 1.375rem;
+          padding: 0 2.5rem;
+        }
+
+        .header__hero-cta {
+          font-family: 'Cooper Hewitt Medium Italic', Arial, sans-serif;
+          font-size: 0.875rem;
+          text-transform: uppercase;
+          color: $white;
+          background-color: $primary-color;
+          width: 300px;
+          height: 50px;
+          border-radius: 50px;
+        }
+      }
+    }
+  }
+}

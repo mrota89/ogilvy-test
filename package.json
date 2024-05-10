@@ -1,0 +1,18 @@
+{
+  "name": "ogilvy-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass scss/style.scss css/style.css",
+    "watch": "sass --watch scss:css",
+    "start": "browser-sync start --server --files 'css/*.css, *.html'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}

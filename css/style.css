@@ -1,0 +1,110 @@
+/* font-face */
+@font-face {
+  font-family: "Cooper Hewitt Bold";
+  src: url("../assets/fonts/CooperHewitt-Bold.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cooper Hewitt Bold Italic";
+  src: url("../assets/fonts/CooperHewitt-BoldItalic.otf");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Cooper Hewitt Book";
+  src: url("../assets/fonts/CooperHewitt-Book.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cooper Hewitt Book Italic";
+  src: url("../assets/fonts/CooperHewitt-BookItalic.otf");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Cooper Hewitt Medium";
+  src: url("../assets/fonts/CooperHewitt-Medium.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cooper Hewitt Medium Italic";
+  src: url("../assets/fonts/CooperHewitt-MediumItalic.otf");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Cooper Hewitt Semibold";
+  src: url("../assets/fonts/CooperHewitt-Semibold.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  min-width: 100%;
+  background-image: url("../assets/images/hero.png");
+  background-position: center;
+  position: relative;
+  height: 100vh;
+}
+.header__overlay {
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.header__content {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  position: absolute;
+  z-index: 2;
+}
+.header__content .header__hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.header__content .header__hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 20px;
+}
+.header__content .header__hero-content .header__hero-title {
+  font-family: "Cooper Hewitt Bold Italic", Arial, sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+  line-height: 2.5rem;
+}
+.header__content .header__hero-content .header__hero-caption {
+  font-family: "Cooper Hewitt Book", Arial, sans-serif;
+  font-size: 0.875rem;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.375rem;
+  padding: 0 2.5rem;
+}
+.header__content .header__hero-content .header__hero-cta {
+  font-family: "Cooper Hewitt Medium Italic", Arial, sans-serif;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #EB3F43;
+  width: 300px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+/*# sourceMappingURL=style.css.map */

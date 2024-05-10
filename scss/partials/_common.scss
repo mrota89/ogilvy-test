@@ -1,0 +1,55 @@
+/* font-face */
+@font-face {
+  font-family: 'Cooper Hewitt Bold';
+  src: url('../assets/fonts/CooperHewitt-Bold.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cooper Hewitt Bold Italic';
+  src: url('../assets/fonts/CooperHewitt-BoldItalic.otf');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Cooper Hewitt Book';
+  src: url('../assets/fonts/CooperHewitt-Book.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cooper Hewitt Book Italic';
+  src: url('../assets/fonts/CooperHewitt-BookItalic.otf');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Cooper Hewitt Medium';
+  src: url('../assets/fonts/CooperHewitt-Medium.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cooper Hewitt Medium Italic';
+  src: url('../assets/fonts/CooperHewitt-MediumItalic.otf');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Cooper Hewitt Semibold';
+  src: url('../assets/fonts/CooperHewitt-Semibold.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
