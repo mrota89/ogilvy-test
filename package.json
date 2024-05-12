@@ -4,10 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass scss/style.scss css/style.css",
-    "watch": "sass --watch scss:css",
-    "start": "browser-sync start --server --files 'css/*.css, *.html'"
+    "watch": "sass --watch scss:css"
   },
   "keywords": [],
   "author": "",

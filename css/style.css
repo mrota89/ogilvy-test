@@ -1,3 +1,6 @@
+/* text */
+/* flexbox */
+/* media queries */
 /* font-face */
 @font-face {
   font-family: "Cooper Hewitt Bold";
@@ -49,10 +52,9 @@
 
 .header {
   min-width: 100%;
-  background-image: url("../assets/images/hero.png");
-  background-position: center;
+  background: url("../assets/images/hero.png") 30%/cover;
   position: relative;
-  height: 100vh;
+  height: 95vh;
 }
 .header__overlay {
   background: rgba(0, 0, 0, 0.4);
@@ -61,42 +63,60 @@
   width: 100%;
 }
 .header__content {
-  margin: 0 auto;
+  position: absolute;
+  transform: translate(-50%, -50%);
   width: 100%;
   max-width: 1200px;
-  position: absolute;
+  height: 100%;
+  left: 50%;
+  top: 50%;
   z-index: 2;
 }
 .header__content .header__hero {
-  height: 100vh;
+  position: absolute;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  justify-content: end;
-}
-.header__content .header__hero-content {
-  display: flex;
-  flex-direction: column;
+  left: 50%;
+  top: 75%;
   align-items: center;
   gap: 7px;
-  margin-bottom: 20px;
 }
-.header__content .header__hero-content .header__hero-title {
-  font-family: "Cooper Hewitt Bold Italic", Arial, sans-serif;
-  font-size: 2.5rem;
+.header__content .header__hero-title {
+  font-family: "Cooper Hewitt Bold Italic";
   text-transform: uppercase;
-  color: #ffffff;
   text-align: center;
+  font-size: 2.5rem;
   line-height: 2.5rem;
+  color: #ffffff;
 }
-.header__content .header__hero-content .header__hero-caption {
+@media screen and (min-width: 1200px) {
+  .header__content .header__hero-title {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    margin-bottom: 10px;
+  }
+}
+.header__content .header__hero-caption {
   font-family: "Cooper Hewitt Book", Arial, sans-serif;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
   font-size: 0.875rem;
   color: #ffffff;
-  text-align: center;
   line-height: 1.375rem;
-  padding: 0 2.5rem;
 }
-.header__content .header__hero-content .header__hero-cta {
+@media screen and (min-width: 1200px) {
+  .header__content .header__hero-caption {
+    font-size: 1rem;
+    line-height: 1.625rem;
+    margin-bottom: 10px;
+  }
+}
+.header__content .header__hero-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Cooper Hewitt Medium Italic", Arial, sans-serif;
   font-size: 0.875rem;
   text-transform: uppercase;
@@ -105,6 +125,494 @@
   width: 300px;
   height: 50px;
   border-radius: 50px;
+  margin-top: 10px;
+  transition: background-color 300ms;
+}
+.header__content .header__hero-cta:hover {
+  cursor: pointer;
+  color: #EB3F43;
+  background-color: #ffffff;
+}
+@media screen and (min-width: 1200px) {
+  .header__content .header__hero {
+    top: 57%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header {
+    background-image: url("../assets/images/hero.png");
+    background-size: 110%;
+    background-position: 50% 25%;
+    height: 90vh;
+  }
+}
+.main__banner-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main__banner-section-logo {
+  text-align: center;
+  margin-top: 30px;
+}
+.main__banner-section-logo .logo-name {
+  font-family: "Cooper Hewitt Book Italic", Arial, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  text-transform: uppercase;
+}
+.main__banner-section-title {
+  font-family: "Cooper Hewitt Bold Italic";
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.875rem;
+  line-height: 2.125rem;
+  color: #EB3F43;
+  padding: 20px 0;
+}
+@media screen and (min-width: 1200px) {
+  .main__banner-section-title {
+    font-size: 2.5rem;
+    line-height: 3.625rem;
+    padding: unset;
+  }
+}
+.main__banner-section-caption {
+  font-family: "Cooper Hewitt Book", Arial, sans-serif;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #575757;
+  margin-bottom: 30px;
+  padding: 0 30px;
+}
+.main__banner-section-caption-br {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .main__banner-section-caption .caption-br {
+    display: block;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .main__banner-section-caption {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+.main__carousel-section {
+  text-align: center;
+  position: relative;
+}
+.main__carousel-section .main__carousel-element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../assets/images/good-things.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 780px;
+}
+.main__carousel-section .main__carousel-element-content {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main__carousel-section .main__carousel-element-content .main__carousel-element-title {
+  font-family: "Cooper Hewitt Bold Italic";
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.875rem;
+  line-height: 3.125rem;
+  color: #ffffff;
+}
+@media screen and (min-width: 1200px) {
+  .main__carousel-section .main__carousel-element-content .main__carousel-element-title {
+    font-size: 2.5rem;
+  }
+}
+.main__carousel-section .main__carousel-element-content .main__carousel-element-caption {
+  font-family: "Cooper Hewitt Book", Arial, sans-serif;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: 0 35px;
+  color: #ffffff;
+}
+@media screen and (min-width: 1200px) {
+  .main__carousel-section .main__carousel-element-content .main__carousel-element-caption {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    max-width: 768px;
+    padding: unset;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .main__carousel-section .main__carousel-element {
+    background-size: 100% 100%;
+  }
+}
+.main__carousel-section .main__carousel-nav {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 30px;
+  left: 50%;
+  width: 100%;
+  gap: 5px;
+}
+.main__carousel-section .main__carousel-nav .nav-button {
+  height: 7px;
+  width: 7px;
+  background-color: #ffffff;
+  opacity: 0.3;
+  border-radius: 50%;
+}
+.main__carousel-section .main__carousel-nav .nav-button--selected {
+  height: 5px;
+  width: 40px;
+  border-radius: 50px;
+  opacity: 1;
+}
+.main__cards-section {
+  background: linear-gradient(180deg, #EB3F43 0%, #000000 100%);
+}
+.main__cards-section .main__cards-content {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+}
+.main__cards-section .main__cards-content .main__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main__cards-section .main__cards-content .main__card-image {
+  width: 100%;
+  max-width: 500px;
+  padding: 0 30px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+.main__cards-section .main__cards-content .main__card-image img {
+  max-width: 100%;
+  height: auto;
+}
+.main__cards-section .main__cards-content .main__card-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main__cards-section .main__cards-content .main__card-description-title {
+  font-family: "Cooper Hewitt Bold Italic";
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.875rem;
+  line-height: 3.625rem;
+  color: #ffffff;
+}
+.main__cards-section .main__cards-content .main__card-description-caption {
+  font-family: "Cooper Hewitt Book", Arial, sans-serif;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: 0 30px;
+  color: #ffffff;
+}
+@media screen and (min-width: 1200px) {
+  .main__cards-section .main__cards-content .main__card {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+  .main__cards-section .main__cards-content .main__card-image {
+    width: 480px;
+    margin-bottom: unset;
+  }
+  .main__cards-section .main__cards-content .main__card-description {
+    margin: 0 60px;
+    width: calc(100% - 600px);
+  }
+  .main__cards-section .main__cards-content .main__card-description-title {
+    font-size: 2.5rem;
+  }
+  .main__cards-section .main__cards-content .main__card-description-title .caption-br {
+    display: none;
+  }
+  .main__cards-section .main__cards-content .main__card-description-caption {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    padding: unset;
+  }
+}
+.main__cards-section .main__cards-content .main__card--reverse {
+  margin-top: 40px;
+}
+.main__cards-section .main__cards-content .main__card--reverse .main__card-description-title {
+  line-height: 2.125rem;
+  padding-bottom: 15px;
+}
+@media screen and (min-width: 1200px) {
+  .main__cards-section .main__cards-content .main__card--reverse {
+    flex-direction: row-reverse;
+  }
+  .main__cards-section .main__cards-content .main__card--reverse .main__card-description-title {
+    line-height: 3.625rem;
+    padding-bottom: unset;
+  }
+}
+.main__slider-section .main__slider-introduction {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+}
+.main__slider-section .main__slider-introduction-title {
+  font-family: "Cooper Hewitt Bold Italic";
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.875rem;
+  line-height: 2.125rem;
+  padding-bottom: 20px;
+  color: #EB3F43;
+}
+@media screen and (min-width: 1200px) {
+  .main__slider-section .main__slider-introduction-title {
+    font-size: 2.5rem;
+    line-height: 3.625rem;
+    padding-bottom: unset;
+  }
+  .main__slider-section .main__slider-introduction-title .title-br {
+    display: none;
+  }
+}
+.main__slider-section .main__slider-introduction-caption {
+  font-family: "Cooper Hewitt Book", Arial, sans-serif;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: 0 30px;
+  color: #575757;
+}
+.main__slider-section .main__slider-introduction-caption .caption-br {
+  display: none;
+}
+@media screen and (min-width: 1200px) {
+  .main__slider-section .main__slider-introduction-caption {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  .main__slider-section .main__slider-introduction .caption-br {
+    display: block;
+  }
+}
+.main__slider-section .main__slider-content .main__slider-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 30px;
+}
+.main__slider-section .main__slider-content .main__slider-element-description-title {
+  font-family: "Cooper Hewitt Bold Italic";
+  text-transform: uppercase;
+  text-align: center;
+  color: #EB3F43;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  padding: 20px 0;
+}
+@media screen and (min-width: 1200px) {
+  .main__slider-section .main__slider-content .main__slider-element-description-title {
+    padding: unset;
+    padding-bottom: 20px;
+  }
+}
+.main__slider-section .main__slider-content .main__slider-element-description-caption {
+  font-family: "Cooper Hewitt Book", Arial, sans-serif;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #575757;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  padding: 0 10px;
+}
+@media screen and (min-width: 1200px) {
+  .main__slider-section .main__slider-content .main__slider-element-description-caption {
+    padding: 0 50px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .main__slider-section .main__slider-content .main__slider-element-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    min-height: 185px;
+  }
+}
+.main__slider-section .main__slider-content .owl-dots {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 30px;
+  left: 50%;
+  width: 100%;
+  gap: 5px;
+  bottom: 0;
+}
+.main__slider-section .main__slider-content .owl-dots .owl-dot {
+  height: 7px;
+  width: 7px;
+  background-color: #ffffff;
+  opacity: 0.3;
+  border-radius: 50%;
+  background-color: #575757;
+}
+.main__slider-section .main__slider-content .owl-dots .owl-dot.active {
+  height: 5px;
+  width: 40px;
+  border-radius: 50px;
+  opacity: 1;
+  background-color: #000000;
+}
+@media screen and (min-width: 576px) {
+  .main__slider-section .main__slider-content .owl-dots {
+    display: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .main__slider-section .main__slider-content {
+    height: unset;
+  }
+  .main__slider-section .main__slider-content .main__slider-element {
+    padding: unset;
+  }
+  .main__slider-section .main__slider-content .main__slider-element-image {
+    padding: 0 5px;
+  }
+}
+.main__impegno-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main__impegno-section-logo {
+  text-align: center;
+  margin-top: 30px;
+}
+.main__impegno-section-logo .logo-name {
+  font-family: "Cooper Hewitt Book Italic", Arial, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  text-transform: uppercase;
+  text-transform: uppercase;
+}
+.main__impegno-section-title {
+  font-family: "Cooper Hewitt Bold Italic";
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.875rem;
+  line-height: 2.125rem;
+  color: #EB3F43;
+  padding: 20px 0;
+}
+@media screen and (min-width: 1200px) {
+  .main__impegno-section-title {
+    font-size: 2.5rem;
+    line-height: 3.625rem;
+    padding: unset;
+  }
+}
+.main__cards-cta-section {
+  display: flex;
+  flex-direction: column;
+}
+.main__cards-cta-section .main__card-cta {
+  position: relative;
+  background-image: url("../assets/images/table.png");
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+}
+.main__cards-cta-section .main__card-cta-title {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px 10px;
+  background: linear-gradient(180deg, #000000 0%, transparent 100%);
+  width: 100%;
+}
+.main__cards-cta-section .main__card-cta-title-text {
+  font-family: "Cooper Hewitt Bold Italic";
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.875rem;
+  line-height: 2.125rem;
+  color: #ffffff;
+  text-align: left;
+  padding: 0 10px 0 5px;
+}
+@media screen and (min-width: 768px) {
+  .main__cards-cta-section .main__card-cta-title-text {
+    text-align: center;
+    padding: 10px 0;
+    width: 340px;
+  }
+}
+.main__cards-cta-section .main__card-cta-title-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 5px;
+}
+@media screen and (min-width: 768px) {
+  .main__cards-cta-section .main__card-cta-title-btn {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .main__cards-cta-section .main__card-cta-title {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .main__cards-cta-section .main__card-cta {
+    width: 50%;
+    height: 70vh;
+  }
+}
+.main__cards-cta-section .main__card-cta:nth-child(2) {
+  background-image: url("../assets/images/notebook.png");
+}
+@media screen and (min-width: 768px) {
+  .main__cards-cta-section {
+    flex-direction: row;
+    padding-top: 20px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

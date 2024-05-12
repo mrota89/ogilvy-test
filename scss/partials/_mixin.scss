@@ -3,3 +3,93 @@
   width: 100%;
   max-width: 1200px;
 }
+
+@mixin pos-absolute-transformed-50 {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+@mixin carousel-dots-wrapper {
+  @include pos-absolute-transformed-50;
+  @include flex-centered;
+  bottom: 30px;
+  left: 50%;
+  width: 100%;
+  gap: 5px;
+}
+
+@mixin carousel-dots {
+  height: 7px;
+  width: 7px;
+  background-color: $white;
+  opacity: 0.3;
+  border-radius: 50%;
+}
+
+@mixin carousel-dots-select {
+  height: 5px;
+  width: 40px;
+  border-radius: 50px;
+  opacity: 1;
+}
+
+/* text */
+
+@mixin title {
+  font-family: 'Cooper Hewitt Bold Italic';
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@mixin caption {
+  font-family: 'Cooper Hewitt Book', Arial, sans-serif;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@mixin check-logo {
+  font-family: 'Cooper Hewitt Book Italic', Arial, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  text-transform: uppercase;
+}
+
+/* flexbox */
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* media queries */
+
+@mixin sm {
+  @media screen and (min-width: 576px) {
+    @content
+  }
+}
+
+@mixin md {
+  @media screen and (min-width: 768px) {
+    @content
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: 992px) {
+    @content
+  }
+}
+
+@mixin xl {
+  @media screen and (min-width: 1200px) {
+    @content
+  }
+}

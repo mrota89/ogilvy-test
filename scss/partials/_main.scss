@@ -1,0 +1,466 @@
+.main {
+
+  &__banner-section {
+    @include flex-column;
+    align-items: center;
+
+    &-logo {
+      text-align: center;
+      margin-top: 30px;
+
+      .logo-name {
+        @include check-logo;
+      }
+    }
+
+    &-title {
+      @include title;
+      font-size: 1.875rem;
+      line-height: 2.125rem;
+      color: $primary-color;
+      padding: 20px 0;
+    }
+
+    @include xl {
+      &-title {
+        font-size: 2.5rem;
+        line-height: 3.625rem;
+        padding: unset;
+      }
+    }
+
+    &-caption {
+      @include caption;
+      color: $text-variant;
+      margin-bottom: 30px;
+      padding: 0 30px;
+
+      &-br {
+        display: none;
+      }
+
+      @include lg {
+        .caption-br {
+          display: block;
+        }
+      }
+    }
+
+    @include xl {
+      &-caption {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+    }
+  }
+
+  &__carousel-section {
+    text-align: center;
+    position: relative;
+
+    .main__carousel-element {
+      @include flex-centered;
+      background: url('../assets/images/good-things.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      height: 780px;
+
+      &-content {
+        @include content;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+        .main__carousel-element-title {
+          @include title;
+          font-size: 1.875rem;
+          line-height: 3.125rem;
+          color: $white;
+        }
+
+        @include xl {
+          .main__carousel-element-title {
+            font-size: 2.5rem;
+          }
+        }
+
+        .main__carousel-element-caption {
+          @include caption;
+          padding: 0 35px;
+          color: $white;
+        }
+
+        @include xl {
+          .main__carousel-element-caption {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            max-width: 768px;
+            padding: unset;
+          }
+        }
+      }
+    }
+
+    @include xl {
+      .main__carousel-element {
+        background-size: 100% 100%;
+      }
+    }
+
+    .main__carousel-nav {
+      @include carousel-dots-wrapper;
+
+      .nav-button {
+        @include carousel-dots;
+      }
+
+      .nav-button--selected {
+        @include carousel-dots-select;
+      }
+    }
+  }
+
+  &__cards-section {
+    background: linear-gradient(180deg, $primary-color 0%, $black 100%);
+
+    .main__cards-content {
+      @include content;
+      @include flex-column;
+      align-items: center;
+      padding: 30px 0;
+
+      .main__card {
+        @include flex-column;
+        align-items: center;
+
+        &-image {
+          width: 100%;
+          max-width: 500px;
+          padding: 0 30px;
+          border-radius: 20px;
+          margin-bottom: 30px;
+
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+        }
+
+        &-description {
+          @include flex-column;
+          align-items: center;
+
+          &-title {
+            @include title;
+            font-size: 1.875rem;
+            line-height: 3.625rem;
+            color: $white;
+          }
+
+          &-caption {
+            @include caption;
+            padding: 0 30px;
+            color: $white;
+          }
+        }
+      }
+
+      @include xl {
+        .main__card {
+          flex-direction: row;
+          align-items: center;
+          width: 100%;
+
+          &-image {
+            width: 480px;
+            margin-bottom: unset;
+          }
+
+          &-description {
+            margin: 0 60px;
+            width: calc(100% - 600px);
+
+            &-title {
+              font-size: 2.5rem;
+
+              .caption-br {
+                display: none;
+              }
+            }
+
+            &-caption {
+              font-size: 1.125rem;
+              line-height: 1.75rem;
+              padding: unset;
+            }
+          }
+        }
+      }
+
+      .main__card--reverse {
+        margin-top: 40px;
+
+        .main__card-description-title {
+          line-height: 2.125rem;
+          padding-bottom: 15px;
+        }
+      }
+
+      @include xl {
+        .main__card--reverse {
+          flex-direction: row-reverse;
+
+          .main__card-description-title {
+            line-height: 3.625rem;
+            padding-bottom: unset;
+          }
+        }
+      }
+    }
+  }
+
+  &__slider-section {
+    .main__slider-introduction {
+      @include content;
+      @include flex-column;
+      align-items: center;
+      padding: 30px 0;
+
+      &-title {
+        @include title;
+        font-size: 1.875rem;
+        line-height: 2.125rem;
+        padding-bottom: 20px;
+        color: $primary-color;
+      }
+
+      @include xl {
+        &-title {
+          font-size: 2.5rem;
+          line-height: 3.625rem;
+          padding-bottom: unset;
+
+          .title-br {
+            display: none;
+          }
+        }
+      }
+
+      &-caption {
+        @include caption;
+        padding: 0 30px;
+        color: $text-variant;
+
+        .caption-br {
+          display: none;
+        }
+      }
+
+      @include xl {
+        &-caption {
+          font-size: 1.125rem;
+          line-height: 1.75rem;
+        }
+
+        .caption-br {
+          display: block;
+        }
+      }
+    }
+
+    .main__slider-content {
+      .main__slider-element {
+        @include flex-column;
+        align-items: center;
+        padding: 0 30px;
+
+        &-description {
+          &-title {
+            @include title;
+            color: $primary-color;
+            font-size: 1.5rem;
+            line-height: 1.875rem;
+            padding: 20px 0;
+          }
+
+          @include xl {
+            &-title {
+              padding: unset;
+              padding-bottom: 20px;
+            }
+          }
+
+          &-caption {
+            @include caption;
+            color: $text-variant;
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            padding: 0 10px;
+          }
+
+          @include xl {
+            &-caption {
+              padding: 0 50px;
+            }
+          }
+        }
+
+        @include xl {
+          &-description {
+            @include flex-column;
+            justify-content: end;
+            min-height: 185px;
+          }
+        }
+      }
+
+      .owl-dots {
+        @include carousel-dots-wrapper;
+        bottom: 0;
+
+        .owl-dot {
+          @include carousel-dots;
+          background-color: $text-variant;
+        }
+
+        .owl-dot.active {
+          @include carousel-dots-select;
+          background-color: $black;
+        }
+      }
+
+      @include sm {
+        .owl-dots {
+          display: none;
+        }
+      }
+    }
+
+    @include xl {
+      .main__slider-content {
+        height: unset;
+
+        .main__slider-element {
+          padding: unset;
+
+          &-image {
+            padding: 0 5px;
+          }
+        }
+      }
+    }
+  }
+
+  &__impegno-section {
+    @include flex-column;
+    align-items: center;
+
+    &-logo {
+      text-align: center;
+      margin-top: 30px;
+
+      .logo-name {
+        @include check-logo;
+        text-transform: uppercase;
+      }
+    }
+
+    &-title {
+      @include title;
+      font-size: 1.875rem;
+      line-height: 2.125rem;
+      color: $primary-color;
+      padding: 20px 0;
+    }
+
+    @include xl {
+      &-title {
+        font-size: 2.5rem;
+        line-height: 3.625rem;
+        padding: unset;
+      }
+    }
+  }
+
+  &__cards-cta-section {
+    @include flex-column;
+
+    .main__card-cta {
+      position: relative;
+      background-image: url('../assets/images/table.png');
+      background-size: cover;
+      background-position: center;
+      height: 50vh;
+
+      &-title {
+        display: flex;
+        justify-content: flex-start;
+        padding: 20px 10px;
+        background: linear-gradient(180deg, $black 0%, transparent 100%);
+        width: 100%;
+
+        &-text {
+          @include title;
+          font-size: 1.875rem;
+          line-height: 2.125rem;
+          color: $white;
+          text-align: left;
+          padding: 0 10px 0 5px;
+        }
+
+        @include md {
+          &-text {
+            text-align: center;
+            padding: 10px 0;
+            width: 340px;
+          }
+        }
+
+        &-btn {
+          @include flex-centered;
+          height: fit-content;
+          background-color: $white;
+          border-radius: 50%;
+          padding: 5px;
+        }
+
+        @include md {
+          &-btn {
+            @include pos-absolute-transformed-50;
+            left: 50%;
+            top: 100%;
+          }
+        }
+      }
+
+      @include md {
+        &-title {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+
+    @include md {
+      .main__card-cta {
+        width: 50%;
+        height: 70vh;
+      }
+    }
+
+    .main__card-cta:nth-child(2) {
+      background-image: url('../assets/images/notebook.png');
+    }
+  }
+
+  @include md {
+    &__cards-cta-section {
+      flex-direction: row;
+      padding-top: 20px;
+    }
+  }
+}
