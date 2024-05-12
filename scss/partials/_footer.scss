@@ -1,0 +1,140 @@
+.footer {
+  background-color: $black;
+  color: $white;
+
+  a {
+    text-decoration: none;
+    color: $white;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  &__content {
+    @include content;
+    @include flex-column;
+    padding: 0 30px;
+
+    &-logo {
+      @include flex-centered;
+      padding: 23px 0;
+    }
+
+    @include lg {
+      &-logo {
+        justify-content: flex-start;
+      }
+    }
+
+    &-links {
+      @include flex-column;
+
+      .footer__content-link {
+        @include flex-centered;
+        font-family: 'Cooper Hewitt Book', Arial, sans-serif;
+        border-top: 1px solid $white;
+        width: 100%;
+        padding: 20px 0;
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+
+        .cta {
+          @include flex-centered;
+          border-radius: 50px;
+          width: 187px;
+          height: 40px;
+          border: solid 1px $white;
+          transition: background-color 300ms;
+        }
+
+        .cta:hover {
+          cursor: pointer;
+          color: $black;
+          background-color: $white;
+        }
+      }
+
+      .footer__content-link--border-bottom {
+        border-bottom: solid 1px $white;
+      }
+
+      @include lg {
+        .footer__content-link {
+          border: unset;
+          padding: unset;
+          border-left: 1px solid;
+        }
+
+        .footer__content-link--border-bottom {
+          border-right: 1px solid;
+        }
+      }
+    }
+
+    @include lg {
+      &-links {
+        flex-direction: row;
+        padding: 20px 0;
+        border-bottom: solid 1px;
+        border-top: solid 1px;
+      }
+    }
+
+    &-info {
+      @include flex-column;
+      align-items: center;
+      font-family: 'Cooper Hewitt Book', Arial, sans-serif;
+      font-size: 0.70rem;
+      line-height: 1.25rem;
+
+      .cf-piva {
+        padding: 20px 0;
+      }
+
+      .info-links {
+        @include flex-centered;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 0 20px;
+
+        div {
+          padding-right: 10px;
+          border-right: 1px solid $white;
+        }
+
+        div:last-child {
+          border-right: unset;
+        }
+
+        .test {
+          align-items: center;
+          font-family: 'Cooper Hewitt Bold', Arial, sans-serif;
+          font-size: 0.70rem;
+          line-height: 1.25rem;
+          text-transform: uppercase;
+          padding: 20px 0;
+        }
+      }
+
+      @include lg {
+        &-info-links {
+          padding: unset;
+        }
+      }
+    }
+
+    @include lg {
+      &-info {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+@include lg {
+  .footer__divider--desktop {
+    height: 70px;
+  }
+}
