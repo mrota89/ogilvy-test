@@ -10,10 +10,7 @@
 }
 
 @mixin carousel-dots-wrapper {
-  @include pos-absolute-transformed-50;
   @include flex-centered;
-  bottom: 30px;
-  left: 50%;
   width: 100%;
   gap: 5px;
 }
