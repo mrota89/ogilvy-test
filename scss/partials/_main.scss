@@ -168,7 +168,7 @@
         }
       }
 
-      @include xl {
+      @include lg {
         .main__card {
           flex-direction: row;
           align-items: center;
@@ -177,6 +177,7 @@
           &-image {
             width: 480px;
             margin-bottom: unset;
+            padding: unset;
           }
 
           &-description {
@@ -209,7 +210,7 @@
         }
       }
 
-      @include xl {
+      @include lg {
         .main__card--reverse {
           flex-direction: row-reverse;
 
