@@ -1,5 +1,7 @@
 .main {
 
+  /* banner */
+
   &__banner-section {
     @include flex-column;
     align-items: center;
@@ -15,22 +17,21 @@
 
     &-title {
       @include title;
-      font-size: 1.875rem;
-      line-height: 2.125rem;
+      @include title-standard;
       color: $primary-color;
       padding: 20px 0;
     }
 
     @include xl {
       &-title {
-        font-size: 2.5rem;
-        line-height: 3.625rem;
+        @include title-xl;
         padding: unset;
       }
     }
 
     &-caption {
       @include caption;
+      @include caption-standard;
       color: $text-variant;
       margin-bottom: 30px;
       padding: 0 30px;
@@ -48,11 +49,12 @@
 
     @include xl {
       &-caption {
-        font-size: 1.125rem;
-        line-height: 1.75rem;
+        @include caption-xl;
       }
     }
   }
+
+  /* carousel */
 
   &__carousel-section {
     text-align: center;
@@ -60,12 +62,12 @@
 
     .main__carousel-element {
       @include flex-centered;
-      background: url('../assets/images/good-things.png') center / cover no-repeat;
+      background: url('../assets/images/carousel-1.png') center / cover no-repeat;
       position: relative;
       height: 780px;
 
       &-content {
-        @include content;
+        @include container;
         @include flex-column;
         width: 100%;
         align-items: center;
@@ -86,19 +88,31 @@
 
         .main__carousel-element-caption {
           @include caption;
+          @include caption-standard;
           padding: 0 35px;
           color: $white;
         }
 
         @include xl {
           .main__carousel-element-caption {
-            font-size: 1.125rem;
-            line-height: 1.75rem;
+            @include caption-xl;
             max-width: 768px;
             padding: unset;
           }
         }
       }
+    }
+
+    .main__carousel-element--second {
+      background: url('../assets/images/carousel-2.png') center / cover no-repeat;
+    }
+
+    .main__carousel-element--third {
+      background: url('../assets/images/carousel-3.png') center / cover no-repeat;
+    }
+
+    .main__carousel-element--last {
+      background: url('../assets/images/carousel-4.png') center / cover no-repeat;
     }
 
     @include xl {
@@ -107,27 +121,30 @@
       }
     }
 
-    .main__carousel-nav {
+    .owl-dots {
       @include carousel-dots-wrapper;
-      @include pos-absolute-transformed-50;
+      width: unset;
+      position: absolute;
       left: 50%;
       bottom: 30px;
 
-      .nav-button {
+      .owl-dot {
         @include carousel-dots;
       }
 
-      .nav-button--selected {
+      .owl-dot.active {
         @include carousel-dots-select;
       }
     }
   }
 
+  /* cards */
+
   &__cards-section {
     background: linear-gradient(180deg, $primary-color 0%, $black 100%);
 
     .main__cards-content {
-      @include content;
+      @include container;
       @include flex-column;
       align-items: center;
       padding: 30px 0;
@@ -162,6 +179,7 @@
 
           &-caption {
             @include caption;
+            @include caption-standard;
             padding: 0 30px;
             color: $white;
           }
@@ -182,7 +200,7 @@
 
           &-description {
             margin: 0 60px;
-            width: calc(100% - 600px);
+            width: calc(100% - 350px);
 
             &-title {
               font-size: 2.5rem;
@@ -193,8 +211,7 @@
             }
 
             &-caption {
-              font-size: 1.125rem;
-              line-height: 1.75rem;
+              @include caption-xl;
               padding: unset;
             }
           }
@@ -223,25 +240,25 @@
     }
   }
 
+  /* slider */
+
   &__slider-section {
     .main__slider-introduction {
-      @include content;
+      @include container;
       @include flex-column;
       align-items: center;
       padding: 30px 0;
 
       &-title {
         @include title;
-        font-size: 1.875rem;
-        line-height: 2.125rem;
+        @include title-standard;
         padding-bottom: 20px;
         color: $primary-color;
       }
 
       @include xl {
         &-title {
-          font-size: 2.5rem;
-          line-height: 3.625rem;
+          @include title-xl;
           padding-bottom: unset;
 
           .title-br {
@@ -252,6 +269,7 @@
 
       &-caption {
         @include caption;
+        @include caption-standard;
         padding: 0 30px;
         color: $text-variant;
 
@@ -262,8 +280,7 @@
 
       @include xl {
         &-caption {
-          font-size: 1.125rem;
-          line-height: 1.75rem;
+          @include caption-xl;
         }
 
         .caption-br {
@@ -281,9 +298,9 @@
         &-description {
           &-title {
             @include title;
-            color: $primary-color;
             font-size: 1.5rem;
             line-height: 1.875rem;
+            color: $primary-color;
             padding: 20px 0;
           }
 
@@ -296,9 +313,8 @@
 
           &-caption {
             @include caption;
+            @include caption-xl;
             color: $text-variant;
-            font-size: 1.125rem;
-            line-height: 1.75rem;
             padding: 0 10px;
           }
 
@@ -356,6 +372,8 @@
     }
   }
 
+  /* impegno */
+
   &__impegno-section {
     @include flex-column;
     align-items: center;
@@ -372,20 +390,20 @@
 
     &-title {
       @include title;
-      font-size: 1.875rem;
-      line-height: 2.125rem;
+      @include title-standard;
       color: $primary-color;
       padding: 20px 0;
     }
 
     @include xl {
       &-title {
-        font-size: 2.5rem;
-        line-height: 3.625rem;
+        @include title-xl;
         padding: unset;
       }
     }
   }
+
+  /* cards-cta */
 
   &__cards-cta-section {
     @include flex-column;
@@ -404,8 +422,7 @@
 
         &-text {
           @include title;
-          font-size: 1.875rem;
-          line-height: 2.125rem;
+          @include title-standard;
           color: $white;
           text-align: left;
           padding: 0 10px 0 5px;

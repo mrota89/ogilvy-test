@@ -12,7 +12,7 @@
   }
 
   &__content {
-    @include content;
+    @include container;
     @include flex-column;
     padding: 0 30px;
 
@@ -45,7 +45,7 @@
           width: 187px;
           height: 40px;
           border: solid 1px $white;
-          transition: background-color 300ms;
+          transition: color 300ms, background-color 300ms;
         }
 
         .cta:hover {
@@ -83,10 +83,9 @@
 
     &-info {
       @include flex-column;
-      align-items: center;
+      @include footer-small;
       font-family: 'Cooper Hewitt Book', Arial, sans-serif;
-      font-size: 0.70rem;
-      line-height: 1.25rem;
+      align-items: center;
 
       .cf-piva {
         padding: 20px 0;
@@ -108,10 +107,9 @@
         }
 
         .test {
+          @include footer-small;
           align-items: center;
           font-family: 'Cooper Hewitt Bold', Arial, sans-serif;
-          font-size: 0.70rem;
-          line-height: 1.25rem;
           text-transform: uppercase;
           padding: 20px 0;
         }

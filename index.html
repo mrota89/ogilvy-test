@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/owl-carousel/owl.theme.default.min.css">
   <link rel="stylesheet" href="css/style.css">
   <title>Ogilvy</title>
-  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
 
 <body>
@@ -29,18 +29,18 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <path id="account_circle" data-name="account_circle_FILL0_wght300_GRAD0_opsz24 (1)"
                 d="M104.451-841.314a13.773,13.773,0,0,1,3.509-1.887,11.7,11.7,0,0,1,4.041-.692,11.7,11.7,0,0,1,4.041.692,13.773,13.773,0,0,1,3.509,1.887,9.955,9.955,0,0,0,1.867-3,9.743,9.743,0,0,0,.689-3.687,9.741,9.741,0,0,0-2.953-7.153A9.741,9.741,0,0,0,112-858.1a9.741,9.741,0,0,0-7.153,2.953A9.741,9.741,0,0,0,101.9-848a9.743,9.743,0,0,0,.689,3.687A9.955,9.955,0,0,0,104.451-841.314Zm7.55-5.738a3.967,3.967,0,0,1-2.918-1.187,3.965,3.965,0,0,1-1.188-2.917,3.967,3.967,0,0,1,1.187-2.918A3.965,3.965,0,0,1,112-855.262a3.967,3.967,0,0,1,2.918,1.188,3.965,3.965,0,0,1,1.188,2.917,3.967,3.967,0,0,1-1.187,2.918A3.965,3.965,0,0,1,112-847.052ZM112-836a11.76,11.76,0,0,1-4.689-.94,12.05,12.05,0,0,1-3.81-2.56,12.053,12.053,0,0,1-2.56-3.81A11.76,11.76,0,0,1,100-848a11.761,11.761,0,0,1,.94-4.69,12.052,12.052,0,0,1,2.56-3.81,12.052,12.052,0,0,1,3.81-2.56A11.76,11.76,0,0,1,112-860a11.76,11.76,0,0,1,4.689.94,12.052,12.052,0,0,1,3.81,2.56,12.052,12.052,0,0,1,2.56,3.81A11.761,11.761,0,0,1,124-848a11.76,11.76,0,0,1-.94,4.689,12.052,12.052,0,0,1-2.56,3.81,12.05,12.05,0,0,1-3.81,2.56A11.76,11.76,0,0,1,112-836Zm0-1.895a10,10,0,0,0,3.3-.55,9.354,9.354,0,0,0,2.819-1.539,9.606,9.606,0,0,0-2.783-1.484A10.208,10.208,0,0,0,112-842a10.372,10.372,0,0,0-3.34.526,9.158,9.158,0,0,0-2.777,1.49,9.354,9.354,0,0,0,2.819,1.539A10,10,0,0,0,112-837.894Zm0-11.053a2.14,2.14,0,0,0,1.577-.634,2.14,2.14,0,0,0,.634-1.576,2.14,2.14,0,0,0-.634-1.577,2.14,2.14,0,0,0-1.577-.634,2.14,2.14,0,0,0-1.577.634,2.14,2.14,0,0,0-.634,1.577,2.14,2.14,0,0,0,.634,1.576A2.14,2.14,0,0,0,112-848.946ZM112-851.157ZM112-839.946Z"
-                transform="translate(-100.001 859.999)" class="svg-account" />
+                transform="translate(-100.001 859.999)" />
             </svg>
           </div>
           <span>Account</span>
         </div>
-        <div class="header__navbar-account-select">
+        <div class="header__navbar-account-dropdown">
           <div class="option option--bordered">
-            <span>Accedi</span>
+            <span class="accedi">Accedi</span>
             <div class="chevron"></div>
           </div>
           <div class="option">
-            <span>Registrati</span>
+            <span class="registrati">Registrati</span>
             <div class="chevron"></div>
           </div>
         </div>
@@ -82,8 +82,8 @@
       </p>
     </section>
 
-    <section class="main__carousel-section">
-      <div class="main__carousel-element">
+    <section class="main__carousel-section owl-carousel">
+      <div class="main__carousel-element main__carousel-element--first">
         <div class="main__carousel-element-content">
           <h2 class="main__carousel-element-title">
             lorem ipsum
@@ -95,11 +95,39 @@
           </p>
         </div>
       </div>
-      <div class="main__carousel-nav">
-        <div class="nav-button nav-button--selected"></div>
-        <div class="nav-button"></div>
-        <div class="nav-button"></div>
-        <div class="nav-button"></div>
+      <div class="main__carousel-element main__carousel-element--second">
+        <div class="main__carousel-element-content">
+          <h2 class="main__carousel-element-title">
+            consectetur adipiscing elit
+          </h2>
+          <p class="main__carousel-element-caption">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+      </div>
+      <div class="main__carousel-element main__carousel-element--third">
+        <div class="main__carousel-element-content">
+          <h2 class="main__carousel-element-title">
+            lorem ipsum
+          </h2>
+          <p class="main__carousel-element-caption">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+      </div>
+      <div class="main__carousel-element main__carousel-element--last">
+        <div class="main__carousel-element-content">
+          <h2 class="main__carousel-element-title">
+            consectetur adipiscing elit
+          </h2>
+          <p class="main__carousel-element-caption">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
       </div>
     </section>
 

@@ -1,4 +1,5 @@
 /* font-face */
+
 @font-face {
   font-family: 'Cooper Hewitt Bold';
   src: url('../assets/fonts/CooperHewitt-Bold.otf');
@@ -47,6 +48,16 @@
   font-weight: normal;
   font-style: normal;
 }
+
+/* variabili */
+
+$primary-color: #EB3F43;
+$text-variant: #575757;
+$white: #ffffff;
+$black: #000000;
+$accent: #036242;
+
+/* reset */
 
 * {
   box-sizing: border-box;

@@ -11,6 +11,8 @@
     width: 100%;
   }
 
+  /* navbar */
+
   &__navbar-wrapper {
     width: 100%;
     height: 180px;
@@ -23,7 +25,7 @@
     transition: height 300ms, background 200ms;
 
     .header__navbar {
-      @include content;
+      @include container;
       position: relative;
       display: flex;
       justify-content: space-between;
@@ -64,6 +66,7 @@
       &-account {
         margin-top: 45px;
         align-self: flex-start;
+        cursor: pointer;
 
         .svg-wrapper {
           @include flex-centered;
@@ -72,6 +75,11 @@
           background-color: $white;
           border-radius: 50%;
           padding: 2px;
+
+          #account_circle {
+            fill: #000;
+            transition: fill 300ms
+          }
         }
 
         span {
@@ -79,16 +87,33 @@
         }
       }
 
-      &-account-select {
-        @include flex-column;
+      &-account--accedi {
+        color: $white;
+        background-color: $accent !important;
+
+        .svg-wrapper {
+          background-color: $accent;
+          border-radius: 50px;
+
+          #account_circle {
+            fill: #fff;
+          }
+        }
+      }
+
+      &-account-dropdown {
+        display: none;
+        flex-direction: column;
         width: 100px;
         align-items: flex-start;
         background-color: $white;
         color: $accent;
         padding: 0 10px;
-        border-radius: 11px;
-        display: none;
+        margin-top: 10px;
+        border-radius: 10px;
         position: absolute;
+        right: 0;
+        top: 75px;
 
         .option {
           display: flex;
@@ -96,6 +121,7 @@
           justify-content: space-between;
           width: 100%;
           padding: 5px;
+          cursor: pointer;
 
           span {
             font-family: 'Cooper Hewitt Book', Arial, sans-serif;
@@ -106,15 +132,24 @@
           .chevron {
             height: 7px;
             width: 7px;
-            border-top: solid 1px;
-            border-left: solid 1px;
+            border-top: solid 2px;
+            border-left: solid 2px;
             transform: rotate(135deg);
+            border-radius: 2px;
           }
+        }
+
+        .option:hover span {
+          text-decoration: underline;
         }
 
         .option--bordered {
           border-bottom: solid 1px;
         }
+      }
+
+      &-account-dropdown--visible {
+        display: flex;
       }
 
       @include lg {
@@ -152,6 +187,10 @@
     .header__navbar-logo {
       width: 100px;
     }
+
+    .header__navbar-account-dropdown {
+      top: 65px;
+    }
   }
 
   @include lg {
@@ -163,13 +202,21 @@
       height: 60px;
       padding-bottom: unset;
       align-items: center;
+
+      .header__navbar {
+        &-account-dropdown {
+          top: 45px;
+        }
+      }
     }
   }
+
+  /* content */
 
   &__content {
     @include pos-absolute-transformed-50;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1100px;
     height: 100%;
     left: 50%;
     top: 50%;
@@ -201,8 +248,8 @@
       &-caption {
         @include caption;
         font-size: 0.875rem;
-        color: $white;
         line-height: 1.375rem;
+        color: $white;
       }
 
       @include xl {
@@ -224,7 +271,7 @@
         height: 50px;
         border-radius: 50px;
         margin-top: 10px;
-        transition: background-color 300ms;
+        transition: color 300ms, background-color 300ms;
       }
 
       &-cta:hover {
@@ -242,11 +289,11 @@
   }
 }
 
-@include xl {
+/* header */
+
+@include lg {
   .header {
-    background-image: url('../assets/images/hero.png');
-    background-size: 110%;
-    background-position: 50% 25%;
+    background: url('../assets/images/hero.png') 50% 25% / 110% no-repeat;
     height: 90vh;
   }
 }

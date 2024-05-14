@@ -1,3 +1,4 @@
+/* carousel */
 /* text */
 /* flexbox */
 /* media queries */
@@ -44,6 +45,8 @@
   font-weight: normal;
   font-style: normal;
 }
+/* variabili */
+/* reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -55,6 +58,8 @@
   background: url("../assets/images/hero.png") 30%/cover;
   position: relative;
   height: 95vh;
+  /* navbar */
+  /* content */
 }
 .header__overlay {
   background: rgba(0, 0, 0, 0.4);
@@ -76,7 +81,7 @@
 .header__navbar-wrapper .header__navbar {
   margin: 0 auto;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1100px;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -117,6 +122,7 @@
 .header__navbar-wrapper .header__navbar-account {
   margin-top: 45px;
   align-self: flex-start;
+  cursor: pointer;
 }
 .header__navbar-wrapper .header__navbar-account .svg-wrapper {
   display: flex;
@@ -128,42 +134,67 @@
   border-radius: 50%;
   padding: 2px;
 }
+.header__navbar-wrapper .header__navbar-account .svg-wrapper #account_circle {
+  fill: #000;
+  transition: fill 300ms;
+}
 .header__navbar-wrapper .header__navbar-account span {
   display: none;
 }
-.header__navbar-wrapper .header__navbar-account-select {
-  display: flex;
+.header__navbar-wrapper .header__navbar-account--accedi {
+  color: #ffffff;
+  background-color: #036242 !important;
+}
+.header__navbar-wrapper .header__navbar-account--accedi .svg-wrapper {
+  background-color: #036242;
+  border-radius: 50px;
+}
+.header__navbar-wrapper .header__navbar-account--accedi .svg-wrapper #account_circle {
+  fill: #fff;
+}
+.header__navbar-wrapper .header__navbar-account-dropdown {
+  display: none;
   flex-direction: column;
   width: 100px;
   align-items: flex-start;
   background-color: #ffffff;
   color: #036242;
   padding: 0 10px;
-  border-radius: 11px;
-  display: none;
+  margin-top: 10px;
+  border-radius: 10px;
   position: absolute;
+  right: 0;
+  top: 75px;
 }
-.header__navbar-wrapper .header__navbar-account-select .option {
+.header__navbar-wrapper .header__navbar-account-dropdown .option {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   padding: 5px;
+  cursor: pointer;
 }
-.header__navbar-wrapper .header__navbar-account-select .option span {
+.header__navbar-wrapper .header__navbar-account-dropdown .option span {
   font-family: "Cooper Hewitt Book", Arial, sans-serif;
   font-size: 0.75rem;
   line-height: 1.75rem;
 }
-.header__navbar-wrapper .header__navbar-account-select .option .chevron {
+.header__navbar-wrapper .header__navbar-account-dropdown .option .chevron {
   height: 7px;
   width: 7px;
-  border-top: solid 1px;
-  border-left: solid 1px;
+  border-top: solid 2px;
+  border-left: solid 2px;
   transform: rotate(135deg);
+  border-radius: 2px;
 }
-.header__navbar-wrapper .header__navbar-account-select .option--bordered {
+.header__navbar-wrapper .header__navbar-account-dropdown .option:hover span {
+  text-decoration: underline;
+}
+.header__navbar-wrapper .header__navbar-account-dropdown .option--bordered {
   border-bottom: solid 1px;
+}
+.header__navbar-wrapper .header__navbar-account-dropdown--visible {
+  display: flex;
 }
 @media screen and (min-width: 992px) {
   .header__navbar-wrapper .header__navbar-account {
@@ -195,6 +226,9 @@
 .header__navbar-wrapper--onscroll .header__navbar-logo {
   width: 100px;
 }
+.header__navbar-wrapper--onscroll .header__navbar-account-dropdown {
+  top: 65px;
+}
 @media screen and (min-width: 992px) {
   .header__navbar-wrapper {
     padding: unset;
@@ -204,12 +238,15 @@
     padding-bottom: unset;
     align-items: center;
   }
+  .header__navbar-wrapper--onscroll .header__navbar-account-dropdown {
+    top: 45px;
+  }
 }
 .header__content {
   position: absolute;
   transform: translate(-50%, -50%);
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
   height: 100%;
   left: 50%;
   top: 50%;
@@ -243,11 +280,9 @@
 .header__content .header__hero-caption {
   font-family: "Cooper Hewitt Book", Arial, sans-serif;
   text-align: center;
-  font-size: 1rem;
-  line-height: 1.5rem;
   font-size: 0.875rem;
-  color: #ffffff;
   line-height: 1.375rem;
+  color: #ffffff;
 }
 @media screen and (min-width: 1200px) {
   .header__content .header__hero-caption {
@@ -269,7 +304,7 @@
   height: 50px;
   border-radius: 50px;
   margin-top: 10px;
-  transition: background-color 300ms;
+  transition: color 300ms, background-color 300ms;
 }
 .header__content .header__hero-cta:hover {
   cursor: pointer;
@@ -282,13 +317,20 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
+/* header */
+@media screen and (min-width: 992px) {
   .header {
-    background-image: url("../assets/images/hero.png");
-    background-size: 110%;
-    background-position: 50% 25%;
+    background: url("../assets/images/hero.png") 50% 25%/110% no-repeat;
     height: 90vh;
   }
+}
+.main {
+  /* banner */
+  /* carousel */
+  /* cards */
+  /* slider */
+  /* impegno */
+  /* cards-cta */
 }
 .main__banner-section {
   display: flex;
@@ -352,14 +394,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("../assets/images/good-things.png") center/cover no-repeat;
+  background: url("../assets/images/carousel-1.png") center/cover no-repeat;
   position: relative;
   height: 780px;
 }
 .main__carousel-section .main__carousel-element-content {
   margin: 0 auto;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1100px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -394,30 +436,39 @@
     padding: unset;
   }
 }
+.main__carousel-section .main__carousel-element--second {
+  background: url("../assets/images/carousel-2.png") center/cover no-repeat;
+}
+.main__carousel-section .main__carousel-element--third {
+  background: url("../assets/images/carousel-3.png") center/cover no-repeat;
+}
+.main__carousel-section .main__carousel-element--last {
+  background: url("../assets/images/carousel-4.png") center/cover no-repeat;
+}
 @media screen and (min-width: 1200px) {
   .main__carousel-section .main__carousel-element {
     background-size: 100% 100%;
   }
 }
-.main__carousel-section .main__carousel-nav {
+.main__carousel-section .owl-dots {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   gap: 5px;
+  width: unset;
   position: absolute;
-  transform: translate(-50%, -50%);
   left: 50%;
   bottom: 30px;
 }
-.main__carousel-section .main__carousel-nav .nav-button {
+.main__carousel-section .owl-dots .owl-dot {
   height: 7px;
   width: 7px;
   background-color: #ffffff;
   opacity: 0.3;
   border-radius: 50%;
 }
-.main__carousel-section .main__carousel-nav .nav-button--selected {
+.main__carousel-section .owl-dots .owl-dot.active {
   height: 5px;
   width: 40px;
   border-radius: 50px;
@@ -429,7 +480,7 @@
 .main__cards-section .main__cards-content {
   margin: 0 auto;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -485,7 +536,7 @@
   }
   .main__cards-section .main__cards-content .main__card-description {
     margin: 0 60px;
-    width: calc(100% - 600px);
+    width: calc(100% - 350px);
   }
   .main__cards-section .main__cards-content .main__card-description-title {
     font-size: 2.5rem;
@@ -518,7 +569,7 @@
 .main__slider-section .main__slider-introduction {
   margin: 0 auto;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -573,9 +624,9 @@
   font-family: "Cooper Hewitt Bold Italic";
   text-transform: uppercase;
   text-align: center;
-  color: #EB3F43;
   font-size: 1.5rem;
   line-height: 1.875rem;
+  color: #EB3F43;
   padding: 20px 0;
 }
 @media screen and (min-width: 1200px) {
@@ -587,11 +638,9 @@
 .main__slider-section .main__slider-content .main__slider-element-description-caption {
   font-family: "Cooper Hewitt Book", Arial, sans-serif;
   text-align: center;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  color: #575757;
   font-size: 1.125rem;
   line-height: 1.75rem;
+  color: #575757;
   padding: 0 10px;
 }
 @media screen and (min-width: 1200px) {
@@ -770,7 +819,7 @@
 .footer__content {
   margin: 0 auto;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1100px;
   display: flex;
   flex-direction: column;
   padding: 0 30px;
@@ -809,7 +858,7 @@
   width: 187px;
   height: 40px;
   border: solid 1px #ffffff;
-  transition: background-color 300ms;
+  transition: color 300ms, background-color 300ms;
 }
 .footer__content-links .footer__content-link .cta:hover {
   cursor: pointer;
@@ -840,10 +889,10 @@
 .footer__content-info {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  font-family: "Cooper Hewitt Book", Arial, sans-serif;
   font-size: 0.7rem;
   line-height: 1.25rem;
+  font-family: "Cooper Hewitt Book", Arial, sans-serif;
+  align-items: center;
 }
 .footer__content-info .cf-piva {
   padding: 20px 0;
@@ -864,10 +913,10 @@
   border-right: unset;
 }
 .footer__content-info .info-links .test {
-  align-items: center;
-  font-family: "Cooper Hewitt Bold", Arial, sans-serif;
   font-size: 0.7rem;
   line-height: 1.25rem;
+  align-items: center;
+  font-family: "Cooper Hewitt Bold", Arial, sans-serif;
   text-transform: uppercase;
   padding: 20px 0;
 }
