@@ -212,6 +212,9 @@
     padding: 0 10px;
     display: block;
   }
+  .header__navbar-wrapper .header__navbar-account--accedi {
+    border: solid 2px;
+  }
 }
 .header__navbar-wrapper--onscroll {
   height: 100px;
@@ -317,13 +320,6 @@
   }
 }
 
-/* header */
-@media screen and (min-width: 992px) {
-  .header {
-    background: url("../assets/images/hero.png") 50% 25%/110% no-repeat;
-    height: 90vh;
-  }
-}
 .main {
   /* banner */
   /* carousel */

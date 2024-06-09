@@ -169,6 +169,10 @@
             display: block;
           }
         }
+
+        &-account--accedi {
+          border: solid 2px;
+        }
       }
     }
   }
@@ -286,14 +290,5 @@
         top: 57%;
       }
     }
-  }
-}
-
-/* header */
-
-@include lg {
-  .header {
-    background: url('../assets/images/hero.png') 50% 25% / 110% no-repeat;
-    height: 90vh;
   }
 }
