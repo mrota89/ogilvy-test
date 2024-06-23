@@ -143,7 +143,6 @@
 }
 .header__navbar-wrapper .header__navbar-account--accedi {
   color: #ffffff;
-  background-color: #036242 !important;
 }
 .header__navbar-wrapper .header__navbar-account--accedi .svg-wrapper {
   background-color: #036242;
@@ -690,6 +689,7 @@
   }
   .main__slider-section .main__slider-content .main__slider-element-image {
     padding: 0 5px;
+    width: 480px;
   }
 }
 .main__impegno-section {
